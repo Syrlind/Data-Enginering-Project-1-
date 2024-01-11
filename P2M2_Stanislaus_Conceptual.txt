@@ -1,0 +1,142 @@
+ 1. Kita No sql atau sinkatan dari (not only Sql ) merupakan adalah sekelompok sistem manajemen basis data 
+ yang berbeda dari pendekatan tradisional SQL atau basis data relasional. 
+ Sistem ini dirancang untuk menangani volume data yang besar, skala horizontal dengan mudah, 
+ dan memberikan fleksibilitas dalam memodelkan data yang tidak terstruktur atau semi-terstruktur. 
+
+ 2.Keputusan mengunakan NoSql atau  RDDMBS : ketika  
+
+ Mengunakan NoSql :
+    1.Skalabilitas Horizontal dibutuhkan : 
+    Jika proyek membutuhkan node/Server ke dalam kluster ,NoSql lebih cocok 
+    2.Data tak terstruktur  atau  Semiterstruktur : 
+    Jika data yang diolah adalah tidak terstruktur atau  semiterstruktur seperti JSON ,atau  grafik 
+    maka NoSQL lebih cocok 
+    3.Perubahan Struktur data sering terjadi : 
+    Jika Struktur data anda cenderung berubah secara dinamis dan sering ,Nosql memeberikan flesibelitas dalam
+    menangani perubahan ini tanpa memerlukan modifikasi skema 
+    4.Performa yang baik untuk operasi Tertentu : 
+    Jika aplikasi anda memiliki beban kerja tertentu ,seperti membaca ,atau 
+    menulis data skala besar ,anda perlu fokus pada kinerja tinggi , NoSQL  
+    dapata memberikan fleksibilitas yang diperlukan
+Mengunakan RDBMS : 
+    1.Struktur data Terdefinisi dengan jelas : 
+    Jika struktur data stabil seperti CSV , Rdbms munkin menjadi pilihan yang baik 
+    2.Integritas Data dan Konsistensi : 
+    Jika aplikasi anda membutuhkan ACID properties (Atomicity,Consistency ,Isolation 
+    ,dan Durability) untuk memastikan integrita dan konsistensi data . 
+    3.Hubungan antar data penting  : 
+    Jika hubungan antar entitas atau tabel sangat penting untuk isnis aplikasi anda 
+    ,RDBMS yang mendukung model relational dan Join operatiion mungkin lebih sesuai 
+    4.Skalabilitas Vertikal Memadahi  : 
+    Jika proyek Anda dapat memenuhi kebuthan Skalabilitas dengan menambah kapasitas di suatu 
+    server , maka RDBMS adalah pilihan yang terbaik .
+
+3.Mongo DB : 
+    keunggulan : 
+    1.Dokumen-Oriented : Monggo Db menyimpan dalam basis data dokumen yang menyimpan 
+    data dalam format  BSON  (Binary  JSON ) . Ini memungkinkan pengmbang untuk menyimpan 
+    dan mengelola data dalam dokumen fleksibel ,yang dapat berisi berbagai jenis data terstruktur
+    atau tidak tersturktur 
+    2.Skalabilitas Horisontal : MongoDB mendukung skalabilitas horizontal dengan mudah 
+    .Anda dapat menambahkan node ke dalam kluster MongoDB untuk menangani pertumbuhan data atau lalu lintas aplikasi tanpa menghentikan operasi.
+    3.Indeks dan Querying: MongoDB mendukung pembuatan indeks untuk meningkatkan kinerja pencarian dan query. Ini memberikan fleksibilitas dalam mengekstrak data yang diperlukan dari koleksi besar.
+    4.Komunitas yang Kuat: MongoDB memiliki komunitas pengguna yang besar dan aktif, serta dokumentasi yang kaya, yang memudahkan integrasi dan pemecahan masalah.
+Cassandra:
+    Keunggulan:
+    1.Wide-Column Store: Cassandra adalah basis data wide-column store yang dirancang untuk menangani volume data yang besar dan menawarkan kinerja tinggi. Model datanya terdiri dari kolom dan bukan baris, yang memungkinkan fleksibilitas dalam menangani jenis data yang berbeda.
+    2.Skalabilitas Linier: Cassandra dirancang untuk menyediakan skalabilitas linier dengan menambahkan node ke dalam kluster. Ini membuatnya cocok untuk aplikasi dengan pertumbuhan data yang cepat.
+    3.Toleransi Terhadap Partisi: Cassandra mematuhi prinsip-prinsip teorema CAP dan menawarkan toleransi terhadap partisi. Sistem ini dapat terus beroperasi bahkan jika terjadi pemisahan atau kegagalan dalam komunikasi antar node.
+    4.Kinerja Tinggi untuk Operasi Tulis dan Baca: Cassandra dirancang untuk memberikan kinerja tinggi terutama untuk operasi tulis dan baca pada skala besar, menjadikannya cocok untuk aplikasi yang membutuhkan akses cepat terhadap data.
+
+4.Apache Airflow adalah platform open-source yang digunakan untuk 
+mengelola dan menjadwalkan alur kerja (workflow) data. Alur kerja ini 
+dapat mencakup serangkaian tugas yang harus dilakukan secara berurutan 
+atau paralel. Airflow memungkinkan pengembang dan analis data membuat,
+menjadwalkan, dan memantau alur kerja ini dengan cara yang terstruktur 
+dan dapat diulang.
+
+Berikut adalah beberapa konsep utama dari Apache Airflow:
+    1.DAG (Directed Acyclic Graph):
+    Alur kerja dalam Airflow direpresentasikan sebagai Directed Acyclic Graph (DAG). DAG adalah grafik yang terarah dan tidak memiliki sirkuit tertutup, yang berarti bahwa tidak ada sirkuit tugas yang membentuk loop.
+    2.Operator:
+    Operator adalah unit dasar dari pekerjaan di dalam DAG. Setiap tugas dalam alur kerja diimplementasikan sebagai operator. Airflow menyediakan berbagai macam operator yang mencakup tugas-tugas umum seperti menjalankan SQL queries, mengirim email, mengaktifkan skrip Python, dan lainnya.
+    3.Task:
+    Task adalah instance dari operator yang dikonfigurasi untuk menjalankan suatu pekerjaan tertentu. Setiap tugas dalam DAG mewakili langkah-langkah yang harus diambil dalam alur kerja.
+    4.Scheduler:
+    Airflow menyediakan scheduler yang bertanggung jawab menjalankan tugas sesuai dengan jadwal yang telah ditentukan dalam DAG. Scheduler secara teratur memeriksa DAG untuk menentukan tugas mana yang harus dijalankan berdasarkan aturan jadwalnya.
+
+5.Great Expectations adalah suatu framework open-source yang digunakan 
+untuk mengelola, menguji, dan memonitor kualitas data dalam proyek analisis 
+data dan pengolahan data. Dengan menggunakan Great Expectations, tim data 
+dan pengembang dapat menetapkan, menjalankan, dan memantau "expectations" 
+atau ekspektasi terhadap data mereka. Berikut adalah beberapa konsep utama 
+dari Great Expectations:
+    1.Expectations:
+    Expectations adalah pernyataan yang mendefinisikan secara formal 
+    bagaimana data seharusnya terlihat atau berperilaku. Ini dapat mencakup 
+    aturan-aturan seperti nilai-nilai unik tidak boleh kosong, atau 
+    distribusi kolom tertentu seharusnya sesuai dengan distribusi tertentu. 
+    Expectations digunakan untuk membuat standar kualitas data yang dapat 
+    diuji dan dipantau.
+    2.Suite:
+    Suite adalah kumpulan dari beberapa expectations. Dalam Great 
+    Expectations, sebuah suite dapat berisi sejumlah besar ekspektasi yang 
+    diterapkan pada berbagai aspek dari data, seperti kolom-kolom tertentu, 
+    struktur dataset, atau aturan bisnis tertentu.
+    3.Data Context:
+    Data Context adalah objek yang mewakili konfigurasi dan metadata dari 
+    suatu proyek data. Ini menyimpan definisi ekspektasi, suite, dan 
+    informasi lainnya yang diperlukan untuk memahami dan menguji kualitas
+    data.
+    4.Validasi dan Pengecekan Kualitas Data:
+    Great Expectations memungkinkan pengguna untuk menjalankan validasi 
+    terhadap data berdasarkan ekspektasi yang telah ditetapkan. Hasil validasi 
+    memberikan wawasan langsung tentang apakah data memenuhi ekspektasi atau tidak.
+    5.Dokumentasi Otomatis:
+    Framework ini menciptakan dokumentasi otomatis untuk ekspektasi data. 
+    Dokumentasi ini memberikan pemahaman yang jelas tentang struktur dan 
+    kualitas data, yang berguna untuk tim data dan pengembang.
+    6.Integrasi dengan Berbagai Sumber Data:
+    Great Expectations dapat diintegrasikan dengan berbagai sumber data, 
+    termasuk database SQL, data lake, dan data frame Python. Ini 
+    memungkinkan pengguna untuk menguji dan memantau kualitas data di 
+    berbagai lingkungan dan platform.
+Great Expectations membantu membangun kepercayaan 
+terhadap data dan mengatasi tantangan dalam memahami 
+dan memelihara kualitas data dalam proyek data yang kompleks
+
+6.Batch Processing adalah metode pengolahan data di mana sejumlah besar data 
+diproses dalam kelompok pada interval waktu tertentu, bukan secara langsung. 
+Contoh penggunaan melibatkan pemrosesan laporan keuangan bulanan atau 
+pembaruan inventori harian. Tools seperti Apache Hadoop, Spark, Flink, dan 
+Airflow digunakan untuk batch processing, memberikan keuntungan skalabilitas, 
+optimasi sumber daya, dan manajemen waktu.
+Batch processing tetap relevan untuk pemrosesan data besar dan terjadwal.
+
+Contoh Kasus Pengunaan Batch Processing : 
+    1.Pengolahan laporan Keuangan BUlanan . 
+    2.Pemrosesan Data penjualan harian . 
+    3.Pembaruan Invenstori secara berkala . 
+
+Tools untuk bactch Proccessing : 
+    1.Apache Headoop.  
+    2.Apache Spark .
+    3.Apache Flink . 
+    4.Apache Airflow . 
+    5.Apache Nifi . 
+
+Keuntungan Batch Processing : 
+    1. Skalabilitas . 
+    2. Optimisasi sumber daya . 
+    3. Manajemen waktu dan biaya . 
+    4. Ketahanan terhadap kegagalan . 
+
+Batch processing tetap menjadi komponen penting dalam pengelolaan dan
+analisis data, terutama ketika skala operasi atau volume data yang dihadapi 
+sangat besar.
+
+
+
+
+
+
